@@ -1,5 +1,5 @@
 import numpy as np
-from lab_2 import solve_with_main_elem_choice
+from lab_2 import lab_2
 
 # Конифигурация вывода
 np.set_printoptions(linewidth=320)
@@ -15,9 +15,13 @@ A = np.array([
     [0.246, -0.301, 0.231, 0.813, -0.702, 1.223, 1.105],
 ])
 b = np.array([0.096, 1.252, 1.024, 1.023, 1.155, 1.937, 1.673])
-x_answer = np.array([11.092, -2.516, 0.721, -2.515, -1.605, 3.624, -4.95])
+
+A_0 = np.array([[0, 1], [0, 0]])
+b_0 = np.array([0, 1])
 
 # Тело программы
 if __name__ == '__main__':
-    print(solve_with_main_elem_choice(A, b))
+    lab_2(A, b)
+
+
 

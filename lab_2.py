@@ -1,4 +1,5 @@
 import numpy as np
+from helpers.Inaccuracies import calculate_guass_inaccuracies
 
 
 def solve_with_main_elem_choice(coef_matrix, b_column):
@@ -20,6 +21,9 @@ def solve_with_main_elem_choice(coef_matrix, b_column):
         max_index = np.argmax(np.abs(matrix[:, :-1]))
         (max_row, max_col) = np.unravel_index(max_index, matrix[:, :-1].shape)
         max_elem = matrix[max_row][max_col]
+
+        if max_elem == 0:
+            return
 
         # Сохранение его индексов
         max_indexes_order.append(max_col)
@@ -49,3 +53,22 @@ def solve_with_main_elem_choice(coef_matrix, b_column):
         answers[max_col] = answer
 
     return answers
+
+
+def lab_2(A, b):
+    x = solve_with_main_elem_choice(A, b)
+
+    if type(x) is not np.ndarray:
+        print(
+            "Матрица вырождена, точного решения не существует"
+        )
+
+        return
+
+    print(
+        "Вычисленное решение СЛАУ: ", x
+    )
+
+    calculate_guass_inaccuracies(A, b, x)
+
+
