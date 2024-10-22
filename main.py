@@ -1,6 +1,7 @@
 import numpy as np
 from lab_2 import lab_2
 from lab_3 import lab_3
+from lab_4 import lab_4
 
 # Конифигурация вывода
 np.set_printoptions(linewidth=320)
@@ -22,12 +23,16 @@ b_0 = np.array([0, 1])
 
 # Тело программы
 if __name__ == '__main__':
-    print("Схема Гаусса с выбором главного элемента")
-    lab_2(A, b)
-    print()
+    # print("Схема Гаусса с выбором главного элемента")
+    # lab_2(A, b)
+    # print()
+    #
+    # print("Метод оптимального исключения")
+    # lab_3(A, b)
+    # print()
 
     print("Метод оптимального исключения")
-    lab_3(A, b)
+    lab_4(A, b)
     print()
 
 
