@@ -2,6 +2,7 @@ import numpy as np
 from lab_2 import lab_2
 from lab_3 import lab_3
 from lab_4 import lab_4
+from lab_5 import lab_5
 
 # Конифигурация вывода
 np.set_printoptions(linewidth=320)
@@ -18,6 +19,28 @@ A = np.array([
 ])
 b = np.array([0.096, 1.252, 1.024, 1.023, 1.155, 1.937, 1.673])
 
+A_symmetric_positive = np.array([
+    [1, 3, -2, 0, -2],
+    [3, 4, -5, 1, -3],
+    [-2, -5, 3, -2, 2],
+    [0, 1, -2, 5, 3],
+    [-2, -3, 2, 3, 4]
+])
+
+b_symmetric_positive = np.array([0.5, 5.4, 5.0, 7.5, 3.3])
+
+A_symmetric_nonpositive = np.array([
+    [2.2, 4, -3, 1.5, 0.6, 2, 0.7],
+    [4, 3.2, 1.5, -0.7, -0.8, 3, 1],
+    [-3, 1.5, 1.8, 0.9, 3, 2, 2],
+    [1.5, -0.7, 0.9, 2.2, 4, 3, 1],
+    [0.6, -0.8, 3.2, 0.6, 0.7, 2, 4],
+    [2, 3, 2, 3, 0.6, 2.2, 4],
+    [0.7, 1, 2, 1, 0.7, 4, 3.2]
+])
+
+b_symmetric_nonpositive = np.array([3.2, 4.3, -0.1, 3.5, 5.3, 9.0, 3.7])
+
 A_0 = np.array([[0, 1], [0, 0]])
 b_0 = np.array([0, 1])
 
@@ -31,9 +54,12 @@ if __name__ == '__main__':
     # lab_3(A, b)
     # print()
 
-    print("Метод оптимального исключения")
-    lab_4(A, b)
-    print()
+    # print("LU - разложение")
+    # lab_4(A, b)
+    # print()
 
+    print("Метод квадратного корня")
+    lab_5(A_symmetric_positive, b_symmetric_positive)
+    print()
 
 
