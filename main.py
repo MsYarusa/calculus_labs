@@ -3,6 +3,7 @@ from lab_2 import lab_2
 from lab_3 import lab_3
 from lab_4 import lab_4
 from lab_5 import lab_5
+from lab_6 import lab_6
 
 # Конифигурация вывода
 np.set_printoptions(linewidth=320)
@@ -44,6 +45,15 @@ b_symmetric_nonpositive = np.array([3.2, 4.3, -0.1, 3.5, 5.3, 9.0, 3.7])
 A_0 = np.array([[0, 1], [0, 0]])
 b_0 = np.array([0, 1])
 
+A_lab_6 = np.array([
+    [1.00, 0.42, 0.54, 0.66],
+    [0.42, 1.00, 0.32, 0.44],
+    [0.54, 0.32, 1.00, 0.22],
+    [0.66, 0.44, 0.22, 1.00]
+])
+
+b_lab_6 = np.array([1, 1, 1, 1])
+
 # Тело программы
 if __name__ == '__main__':
     # print("Схема Гаусса с выбором главного элемента")
@@ -58,8 +68,12 @@ if __name__ == '__main__':
     # lab_4(A, b)
     # print()
 
-    print("Метод квадратного корня")
-    lab_5(A_symmetric_positive, b_symmetric_positive)
+    # print("Метод квадратного корня")
+    # lab_5(A_symmetric_positive, b_symmetric_positive)
+    # print()
+
+    print("Метод окаймления")
+    lab_6(A, b)
     print()
 
 
