@@ -47,7 +47,7 @@ def solve_with_framing(coef_matrix, b_column):
     inverse_of_matrix = inverse_of_matrices[n-1]
 
     print('Сравнение обратных матриц полученных нами и встроенным методом')
-    print(inverse_of_matrix)
+    print(np.abs(inverse_of_matrix - np.linalg.inv(coef_matrix)))
     print(np.linalg.inv(coef_matrix))
 
     x_vector = inverse_of_matrix @ b_column

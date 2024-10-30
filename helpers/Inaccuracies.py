@@ -11,7 +11,7 @@ def calculate_guass_inaccuracies(coef_matrix, b_column, answers):
 
     print(
         "Модуль разности вычисленного решения и решения через библиотеку np: " +
-        str(np.linalg.norm(np.linalg.solve(A, b) - x))
+        str(np.linalg.norm(np.linalg.solve(A, b) - x, ord=8))
     )
 
     print(

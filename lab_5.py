@@ -39,8 +39,9 @@ def solve_with_square_root(coef_matrix, b_column):
                 s_matrix[i, j] = (coef_matrix[i, j] + second_summand) / s_matrix[i, i]
 
     print(s_matrix)
-    print(np.real(s_matrix.T @ s_matrix))
-    print(np.real(coef_matrix))
+    print('Сравнение полученной и изначальной матрицы')
+    print(abs(s_matrix.T @ s_matrix - coef_matrix))
+    print(np.max(s_matrix.T @ s_matrix - coef_matrix))
 
     y_vector = np.zeros(n, dtype=complex)
     y_vector[0] = b_column[0] / s_matrix[0, 0]
