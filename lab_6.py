@@ -37,7 +37,7 @@ def solve_with_framing(coef_matrix, b_column):
 
         alpha = (alpha_u + alpha_v) / 2
 
-        print(alpha)
+        print('alpha:', alpha)
 
         inverse_of_matrices[k][:k, :k] = inverse_of_matrices[k-1] + np.outer(u_column, v_row) / alpha
         inverse_of_matrices[k][:k, k] = u_column / alpha
@@ -47,8 +47,8 @@ def solve_with_framing(coef_matrix, b_column):
     inverse_of_matrix = inverse_of_matrices[n-1]
 
     print('Сравнение обратных матриц полученных нами и встроенным методом')
-    print(np.abs(inverse_of_matrix - np.linalg.inv(coef_matrix)))
-    print(np.linalg.inv(coef_matrix))
+    print(np.max(np.abs(inverse_of_matrix - np.linalg.inv(coef_matrix))))
+    print(inverse_of_matrix)
 
     x_vector = inverse_of_matrix @ b_column
 

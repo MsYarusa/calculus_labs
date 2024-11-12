@@ -68,9 +68,9 @@ if __name__ == '__main__':
     # lab_4(A, b)
     # print()
 
-    print("Метод квадратного корня")
-    lab_5(A_symmetric_nonpositive, b_symmetric_nonpositive)
-    print()
+    # print("Метод квадратного корня")
+    # lab_5(A_symmetric_nonpositive, b_symmetric_nonpositive)
+    # print()
 
     print("Метод окаймления")
     lab_6(A, b)
