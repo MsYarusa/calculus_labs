@@ -27,6 +27,11 @@ def sign(number):
 
 def rotation_method(matrix, p=5, max_iter=1000):
     # Проверка, что симметричная невырожденная
+    if not np.allclose(matrix, matrix.T):
+        raise ValueError("Матрица не симметричная")
+
+    if np.linalg.det(matrix) == 0:
+        raise ValueError("Матрица вырожденная")
 
     n = len(matrix)
 
@@ -84,7 +89,7 @@ def lab_10(coef_matrix):
 
     eigenvalues, eigenvectors = np.linalg.eig(coef_matrix)
 
-    print('Разность данных собственных значений и посчитанных:')
+    print('Разность посчитанных собсвтенных значений и полученный методом из numpy:')
     print(abs(np.sort(calculated_eigenvalues) - np.sort(eigenvalues)))
 
 
