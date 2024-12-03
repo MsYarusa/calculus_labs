@@ -4,6 +4,8 @@ from lab_3 import lab_3
 from lab_4 import lab_4
 from lab_5 import lab_5
 from lab_6 import lab_6
+from lab_7 import lab_7
+from lab_8 import lab_8
 
 # Конифигурация вывода
 np.set_printoptions(linewidth=320)
@@ -54,6 +56,31 @@ A_lab_6 = np.array([
 
 b_lab_6 = np.array([1, 1, 1, 1])
 
+A_lab_7 = np.array([
+    [6.03, 13, -17],
+    [13, 29.03, -38],
+    [-17, -38, 50.03]
+])
+
+b_lab_7 = np.array([2.0909, 4.1509, -5.1191])
+
+A_lab_8 = np.array([
+    [10.9, 1.2, 2.1, 0.9],
+    [1.2, 11.2, 1.5, 2.5],
+    [2.1, 1.5, 9.8, 1.3],
+    [0.9, 2.5, 1.3, 12.1]
+])
+
+b_lab_8 = np.array([-7.0, 5.3, 10.3, 24.6])
+
+A_lab_8_1 = np.array([
+    [3.82, 1.02, 0.75, 0.81],
+    [1.05, 4.53, 0.98, 1.53],
+    [0.73, 0.85, 4.71, 0.81],
+    [0.88, 0.81, 1.28, 3.50]
+])
+b_lab_8_1 = np.array([15.655, 22.705, 23.480, 16.110])
+
 # Тело программы
 if __name__ == '__main__':
     # print("Схема Гаусса с выбором главного элемента")
@@ -72,8 +99,16 @@ if __name__ == '__main__':
     # lab_5(A_symmetric_nonpositive, b_symmetric_nonpositive)
     # print()
 
-    print("Метод окаймления")
-    lab_6(A, b)
+    # print("Метод окаймления")
+    # lab_6(A, b)
+    # print()
+
+    # print("Метод отражений")
+    # lab_7(A_lab_7, b_lab_7)
+    # print()
+
+    lab_8(A_lab_8, b_lab_8)
     print()
+
 
 

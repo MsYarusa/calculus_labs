@@ -15,6 +15,6 @@ def calculate_guass_inaccuracies(coef_matrix, b_column, answers):
     )
 
     print(
-        "Оценка абсолютной погрешности решения СЛАУ (https://studfile.net/preview/4426799/page:9/): " +
+        "Невязка: " +
         str(np.linalg.norm(delta_x))
     )
