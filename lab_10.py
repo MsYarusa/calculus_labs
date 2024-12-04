@@ -92,6 +92,14 @@ def lab_10(coef_matrix):
     print('Разность посчитанных собсвтенных значений и полученный методом из numpy:')
     print(abs(np.sort(calculated_eigenvalues) - np.sort(eigenvalues)))
 
+    print('Погрешность вычислений:')
+    res = np.array([])
+
+    for eigenvalue in calculated_eigenvalues:
+        res = np.append(res, np.linalg.det(coef_matrix - eigenvalue * np.eye(coef_matrix.shape[0])))
+
+    print(np.max(abs(res)))
+
 
 if __name__ == '__main__':
     A_1 = np.array([
@@ -122,8 +130,8 @@ if __name__ == '__main__':
     l_3 = np.array([15.655, 22.705, 23.480, 16.110])
 
     A_4 = np.array([
-        [1.0, 3.0],
-        [3.0, 4.0]
+        [2.0, 1.0],
+        [1.0, 2.0]
     ])
 
     lab_10(A_1)
