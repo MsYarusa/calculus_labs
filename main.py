@@ -6,6 +6,7 @@ from lab_5 import lab_5
 from lab_6 import lab_6
 from lab_7 import lab_7
 from lab_8 import lab_8
+from lab_11 import lab_11
 
 # Конифигурация вывода
 np.set_printoptions(linewidth=320)
@@ -81,6 +82,13 @@ A_lab_8_1 = np.array([
 ])
 b_lab_8_1 = np.array([15.655, 22.705, 23.480, 16.110])
 
+A_small = np.array([
+    [2, 1],
+    [1, 2]
+])
+
+b_small = np.array([4, 5])
+
 # Тело программы
 if __name__ == '__main__':
     # print("Схема Гаусса с выбором главного элемента")
@@ -107,7 +115,10 @@ if __name__ == '__main__':
     # lab_7(A_lab_7, b_lab_7)
     # print()
 
-    lab_8(A_lab_8, b_lab_8)
+    # lab_8(A_lab_8, b_lab_8)
+    # print()
+
+    lab_11(A_small, b_small)
     print()
 
 
