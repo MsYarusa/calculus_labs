@@ -15,6 +15,8 @@ def solve_with_reflection(coef_matrix, b_column):
     a_matrix = np.copy(coef_matrix)
     f_vector = np.copy(b_column)
 
+    q_inv_matrix = np.eye(n)
+
     for k in range(n):
         sigma_k = 1 if a_matrix[k, k] >= 0 else -1
 
@@ -27,20 +29,22 @@ def solve_with_reflection(coef_matrix, b_column):
         p_vector[k] = p_k
         p_vector[k+1:] = p_l
 
-        sigma = np.copy(a_matrix)
-
-        p_matrix = sigma - 2 * np.outer(p_vector, p_vector) / np.sum(p_vector ** 2)
+        p_matrix = np.eye(n) - 2 * np.outer(p_vector, p_vector) / np.sum(p_vector ** 2)
 
         a_matrix = p_matrix @ a_matrix
 
-        f_vector = p_matrix @ a_matrix
+        f_vector = p_matrix @ f_vector
 
-    # print(p_matrix)
+        q_inv_matrix = p_matrix @ q_inv_matrix
+
+    print('Матрица R')
     print(a_matrix)
-    # print(np.linalg.inv(p_matrix) @ a_matrix)
+    print('Матрица QR')
+    print(np.linalg.inv(q_inv_matrix) @ a_matrix)
+    print('Матрица A')
     print(coef_matrix)
-    # print(np.max(abs(np.linalg.inv(p_matrix) @ a_matrix - coef_matrix)))
-    print(f_vector)
+    print('Максимальный элемент по модулю матрицы QR - A')
+    print(np.max(abs(np.linalg.inv(q_inv_matrix) @ a_matrix - coef_matrix)))
 
     x_vector = np.zeros(n)
 

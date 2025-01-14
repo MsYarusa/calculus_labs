@@ -41,12 +41,9 @@ A_symmetric_nonpositive = np.array([
     [0.6, -0.8, 3, 4, 3.2, 0.6, 0.7],
     [2, 3, 2, 3, 0.6, 2.2, 4],
     [0.7, 1, 2, 1, 0.7, 4, 3.2]
-], dtype=complex)
+])
 
 b_symmetric_nonpositive = np.array([3.2, 4.3, -0.1, 3.5, 5.3, 9.0, 3.7])
-
-A_0 = np.array([[0, 1], [0, 0]])
-b_0 = np.array([0, 1])
 
 A_lab_6 = np.array([
     [1.00, 0.42, 0.54, 0.66],
@@ -111,15 +108,15 @@ if __name__ == '__main__':
     # lab_6(A, b)
     # print()
 
-    # print("Метод отражений")
-    # lab_7(A_lab_7, b_lab_7)
-    # print()
+    print("Метод отражений")
+    lab_7(A, b)
+    print()
 
     # lab_8(A_lab_8, b_lab_8)
     # print()
 
-    lab_11(A_small, b_small)
-    print()
+    # lab_11(A_small, b_small)
+    # print()
 
 
 
